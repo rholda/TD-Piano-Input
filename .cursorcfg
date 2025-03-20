@@ -1,0 +1,30 @@
+{
+    "*.py": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.rulers": [
+            88
+        ],
+        "editor.formatOnSave": true,
+        "python.formatting.provider": "black",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.analysis.typeCheckingMode": "basic",
+        "python.linting.pylintArgs": [
+            "--disable=E1101",
+            "--disable=C0111",
+            "--disable=C0116",
+            "--disable=E0211",
+            "--disable=C0103",
+            "--disable=W0613",
+            "--generated-members=op,me,parent,project,mod,ext,re,math,td,ui,storage,*",
+            "--good-names=op,me,i"
+        ],
+        "python.analysis.extraPaths": [
+            "/Applications/TouchDesigner.app/Contents/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages"
+        ],
+        "cursor.promptContext": [
+            ".cursor/rules/td-rule.mdc"
+        ]
+    }
+}

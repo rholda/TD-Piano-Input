@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# TouchDesigner Python Scripts Context
+
+This directory contains Python scripts for TouchDesigner. When interpreting and modifying code in this directory, please follow these guidelines:
+
+## Environment Context
+- All Python scripts run within TouchDesigner's operator context
+- Python version: 3.11 (TouchDesigner's built-in Python)
+- Key built-in objects: `op`, `me`, `parent`, `project`, `mod`, `ext`, `td`, `ui`, `storage`
+- Operator types: CHOP, DAT, TOP, SOP, COMP are standard TouchDesigner components
+
+## Coding Standards
+- Tab size: 4 spaces
+- Max line length: 88 characters
+- Format provider: black
+- Type checking: basic mode
+- Linting: pylint enabled with TouchDesigner-specific rules
+
+## Function Conventions
+- Standard operator callbacks must be preserved:
+  - onCook(op)
+  - onSetupParameters(scriptOp)
+  - onPulse(par)
+- Parameter setup should use scriptOp.appendCustomPage() pattern
+- Error handling should include proper TouchDesigner debugging via print()
+
+## Variable Naming
+Approved special names:
+- op (operator context)
+- me (current operator)
+- i (loop iterator)
+
+## Special Considerations
+- CHOP channels are accessed via chan() method
+- DAT tables use rows/cols structure
+- Parameter setup requires proper min/max/normalization values
+- Always maintain operator cooking pipeline integrity
